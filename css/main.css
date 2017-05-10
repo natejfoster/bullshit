@@ -1,0 +1,36 @@
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
+
+.axis line, .axis path {
+  fill: none;
+  stroke: #000;
+}
+
+.title {
+	text-anchor:middle;
+}
+
+hr {
+  border-color: #002642;
+  border-width: 2px;
+}
+
+#vis {
+  position:relative;
+  padding-bottom:100px;
+  margin-bottom: 42px;
+  height: 500px;
+  margin-top: 42px;
+}
+
+body {
+  background-color: #D0CCD0;
+}
+
+#bullshitTimer {
+  margin-bottom: 42px;
+}
+
+svg {
+  display: block;
+  margin: auto;
+}
