@@ -55,19 +55,18 @@ var CirclePack = function() {
         .attr('class', 'd3-tip')
         .offset([-10, 0])
         .html(function(d) {
-          console.log(d);
-        if (d.parent == null) {
-          if (rootTitle.length > 0) {
-            return "<span style='color:white'>" + rootTitle + "</span>";
-          } else {return;};
-        } else if (d.data[leafTitle] == null) {
-            return "<span style='color:white'>" + d.data.key + "</span>";
-          } else {
-            if (showCount) {
-              return "<span style='color:white'>" + d.data[leafTitle] + ": " + d.data[count] + "</span>";
-            }
-            return "<span style='color:white'>" + d.data[leafTitle] + "</span>";
-          };
+          if (d.parent == null) {
+            if (rootTitle.length > 0) {
+              return "<span style='color:white'>" + rootTitle + "</span>";
+            } else {return;};
+          } else if (d.data[leafTitle] == null) {
+              return "<span style='color:white'>" + d.data.key + "</span>";
+            } else {
+              if (showCount) {
+                return "<span style='color:white'>" + d.data[leafTitle] + ": " + d.data[count] + "</span>";
+              }
+              return "<span style='color:white'>" + d.data[leafTitle] + "</span>";
+            };
         })
 
       svgEnter.call(tip);
@@ -80,7 +79,7 @@ var CirclePack = function() {
           .attr('transform', function(d) {return 'translate(' + diameter / 2 + ',' + diameter / 2 +')';})
           .on('mouseover', tip.show)
           .on('mouseout', tip.hide)
-          //.merge(nodes)
+          .merge(nodes)
           .transition().duration(1500)
           .attr('class', 'node')
           .attr('transform', function(d) {return 'translate(' + d.y + ',' + d.x +')';})
